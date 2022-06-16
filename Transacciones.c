@@ -88,7 +88,7 @@ Transaccion *hacerTransaccion(int numCuenta, float importe, int tipoMovimiento, 
         return NULL;
     }
 
-    if(verificarSiHaySaldo(importe, numCuenta, tipoMovimiento, usuario) != 1){
+    if(verificarSiHaySaldo(importe, tipoMovimiento, usuario) != 1){
         printf("La cuenta %d no puede gastar %.2f porque no tiene saldo (tiene %.2f).\n", numCuenta, importe, usuario->saldo);
         return NULL;
     }
@@ -118,6 +118,7 @@ void insertarTransaccion(ListadoTransacciones *listado, Transaccion *nuevo){
     for (; aux->siguiente != NULL; aux = aux->siguiente) {}
 
     aux->siguiente = nuevo;
+    listado->tam++;
 }
 
 Cuenta *verificarSiExiste(int numCuenta, ListadoCuentas *listado){
@@ -140,7 +141,7 @@ Cuenta *verificarSiExiste(int numCuenta, ListadoCuentas *listado){
     return aux;
 }
 
-int verificarSiHaySaldo(float importe, int numCuenta, int tipoMovimiento, Cuenta *actual){
+int verificarSiHaySaldo(float importe, int tipoMovimiento, Cuenta *actual){
     int respuesta = 0;
 
     if(actual == NULL){

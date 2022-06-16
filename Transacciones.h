@@ -28,7 +28,7 @@ ListadoCuentas *crearListadoCuentas();
 Cuenta *crearCuenta(int numCuenta);
 void insertarCuenta(ListadoCuentas *listado, Cuenta *nueva);
 Cuenta *verificarSiExiste(int numCuenta, ListadoCuentas *listado);
-int verificarSiHaySaldo(float importe, int numCuenta, int tipoMovimiento, Cuenta *actual);
+int verificarSiHaySaldo(float importe, int tipoMovimiento, Cuenta *actual);
 
 ListadoTransacciones *crearListadoTransacciones();
 Transaccion *hacerTransaccion(int numCuenta, float importe, int tipoMovimiento, ListadoCuentas *listado);
