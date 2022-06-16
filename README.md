@@ -1,3 +1,4 @@
+# Ejercicio 7 - Guía 1 - Herrera Ocampo Martín
 Se dispone de la siguiente información almacenada en un arreglo de no más de 100
 registros: 
 - Nro de cuenta cliente. 
